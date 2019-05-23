@@ -1,7 +1,45 @@
-<% provide(:title, "Home") %>
-<h1>Sample App</h1>
-<p>
-  This is the home page for the
-  <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-  sample application.
-</p>
+<main>
+  <section class="section-about">
+    <div class="u-center-text u-margin-bottom-big">
+      <h2 class="heading-secondary">
+        Exciting Framework Web for beginner
+      </h2>
+    </div>
+
+    <div class="row">
+      <div class="col-1-of-2">
+        <h3 class="heading-tertiary u-margin-bottom-small">Ruby on Rails Tutorial Book</h3>
+        <p class="paragraph">
+          The <a href="http://www.railstutorial.org/">is a tutorial for teaching
+          web development with Ruby on Rails.</a>
+        </p>
+
+        <p>This application is build base on this tutorial.</p>
+
+        <h3 class="heading-tertiary u-margin-bottom-small">Ruby on Rails Guide</h3>
+        <p class="paragraph">
+          The <a href="https://guides.rubyonrails.org/">is an official guide of Ruby on Rails.</a>
+        </p>
+
+        <p>Reference it if you want to learn more about Ruby on Rails.</p>
+        <%= link_to "More <span>&rarr;</span>".html_safe, static_pages_about_path, class: "btn-text" %>
+      </div>
+
+      <div class="col-1-of-2">
+        <div class="composition">
+          <%= image_tag("rails-welcome.png", alt: "Rails welcome", class: "composition__photo composition__photo--p1 ") %>
+          <%= image_tag("rails.jpg", alt: "Rails", class: "composition__photo composition__photo--p2 ") %>
+          <%= image_tag("rails-component.png", alt: "Rails component", class: "composition__photo composition__photo--p3 ") %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-microposts">
+    <div class="u-center-text u-margin-bottom-big">
+      <h2 class="heading-secondary">
+        All MicroPosts
+      </h2>
+    </div>
+  </section>
+</main>
