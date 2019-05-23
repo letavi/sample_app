@@ -19,4 +19,7 @@ class User < ApplicationRecord
 
   #  Validate for password of user
   validates :password, presence: true, length: { minimum: 6 }
+
+  # Define association with micropost
+  has_many :microposts, dependent: :destroy
 end
