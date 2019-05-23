@@ -11,22 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.text_field :title, class: "form-control", placeholder: "Enter name of title" %>
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+  <div class="form-group">
+    <%= form.text_area :content, class: "form-control", placeholder: "Enter content of post" %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+  <div class="form-group">
+    <%= form.text_field :user_id, class: "form-control", placeholder: "Enter ID of author" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn--wthite btn--animated" %>
   </div>
 <% end %>

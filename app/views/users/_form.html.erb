@@ -11,27 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.text_field :name, class: "form-control", placeholder: "Enter Your Name" %>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="form-group">
+    <%= form.text_field :email, class: "form-control", placeholder: "Enter Your Email" %>
   </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="form-group">
+    <%= form.password_field :password, class: "form-control", placeholder: "Enter Your Password" %>
   </div>
 
-  <div class="field">
-  <%= form.label :password_confirmation %>
-  <%= form.password_field :password_confirmation %>
+  <div class="form-group">
+  <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Retype Your Password to Confirm" %>
 </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn--white btn--animated" %>
   </div>
 <% end %>

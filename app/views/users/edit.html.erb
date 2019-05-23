@@ -1,6 +1,15 @@
-<h1>Editing User</h1>
+<% provide(:title, "Edit User") %>
+<section class="section-user">
+  <div class="u-center-text u-margin-bottom-big">
+    <h2 class="heading-secondary">
+      Edit User
+    </h2>
+  </div>
 
-<%= render 'form', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+  <div class="row">
+    <p class="paragraph u-justify-text">
+    <%= render 'form', user: @user %>
+    <%= link_to 'Show', @user, class: "short-link" %> | <%= link_to 'Back', users_path, class: "short-link" %>
+    </p>
+  </div>
+</section>
