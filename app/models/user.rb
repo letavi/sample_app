@@ -16,4 +16,7 @@ class User < ApplicationRecord
   
   # Add secure password for user
   has_secure_password
+
+  #  Validate for password of user
+  validates :password, presence: true, length: { minimum: 6 }
 end
