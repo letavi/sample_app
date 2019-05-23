@@ -1,0 +1,24 @@
+<footer class="footer">
+  <div class="footer__logo-box">
+    <%= image_tag("logo-red.png", alt: "LOGO-RED", class: "footer__logo") %>
+  </div>
+
+  <div class="row">
+    <div class="col-1-of-2">
+      <div class="footer__navigation">
+        <ul class="footer__list">
+          <li class="footer__item"><%= link_to 'About', static_pages_about_path, class: "footer__link" %></li>
+          <li class="footer__item"><%= link_to 'Help', static_pages_help_path, class: "footer__link" %></li>
+          <li class="footer__item"><%= link_to 'Contributors', root_path, class: "footer__link" %></li>
+          <li class="footer__item"><%= link_to 'Microposts', root_path, class: "footer__link" %></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-1-of-2">
+      <p class="footer__copyright">
+        Built by <%= link_to 'LTViet', "http://sample_app.test/" %> for learning Ruby on Rails by doing project &copy; 2019
+      </p>
+    </div>
+  </div>
+</footer>
