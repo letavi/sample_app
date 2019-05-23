@@ -8,5 +8,6 @@ class User < ApplicationRecord
 
   #  Validate email of user must be presence, length of email
   validates :email, presence: true, length: { maximum: 255 },
-            format: { with: VALID_EMAIL_REGEX }
+            format: { with: VALID_EMAIL_REGEX },
+            uniqueness: true
 end
