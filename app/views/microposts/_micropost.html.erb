@@ -1,0 +1,21 @@
+<table class="table custom-table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+      <th scope="col-span-3">More Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @microposts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.content %></td>
+        <td><%= link_to 'Show', micropost_path(post) %></td>
+        <td><%= link_to 'Edit', edit_micropost_path(post) %></td>
+        <td><%= link_to 'Remove', micropost_path(post), method: :delete, data: { confirm: "Are you sure remove this post?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

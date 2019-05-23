@@ -1,6 +1,16 @@
-<h1>Editing Micropost</h1>
+<% provide(:title, "Edit Post") %>
+<section class="section-micropost">
+  <div class="u-center-text u-margin-bottom-big">
+    <h2 class="heading-secondary">
+      Edit Post 
+    </h2>
+  </div>
 
-<%= render 'form', micropost: @micropost %>
-
-<%= link_to 'Show', @micropost %> |
-<%= link_to 'Back', microposts_path %>
+  <div class="row">
+    <p class="paragraph u-justify-text">
+    <%= render 'form', micropost: @micropost %>
+    <%= link_to 'Show', @micropost, class: "short-link"  %> |
+    <%= link_to 'Back', microposts_path, class: "short-link" %>
+    </p>
+  </div>
+</section>

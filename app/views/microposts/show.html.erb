@@ -1,17 +1,20 @@
-<p>
-  <strong>Title:</strong>
-  <%= @micropost.title %>
-</p>
+<% provide(:title, "Post") %>
+<section class="section-micropost">
+  <div class="u-center-text u-margin-bottom-big">
+    <h2 class="heading-secondary">
+      Detail Post
+    </h2>
+  </div>
 
-<p>
-  <strong>Content:</strong>
-  <%= @micropost.content %>
-</p>
+  <div class="row">
+    <h4 class="u-center-text title-post"><%= @micropost.title %></h4>
+    <p class="paragraph">
+      <%= @micropost.content %>
+    </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @micropost.user %>
-</p>
-
-<%= link_to 'Edit', edit_micropost_path(@micropost) %> |
-<%= link_to 'Back', microposts_path %>
+    <p class="paragraph u-center-text">
+      <%= link_to 'Edit Post', edit_micropost_path(@micropost), class: "btn btn-primary" %>
+      <%= link_to 'Remove Post', micropost_path(@micropost), method: :delete, data: { confirm: "Are you sure remove this post?" }, class: "btn btn-warning" %>
+    </p>
+  </div>
+</section>
