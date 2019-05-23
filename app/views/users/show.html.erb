@@ -12,3 +12,13 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<% unless @microposts_user == 0 %>
+  <% @microposts_user.each do |post| %>
+    <%= post.title %>
+    <%= post.content %>
+  <% end %>
+<% else %>
+  <p>You don't have any post, so do you want to create post?</p>
+  <%= link_to 'Click here', new_micropost_path %>
+<% end %>
