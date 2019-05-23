@@ -1,5 +1,8 @@
 class User < ApplicationRecord
 
+  # Sure that email of user must lowercase format before it is saved to database
+  before_save { email.downcase! }
+
   # Format of email
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
