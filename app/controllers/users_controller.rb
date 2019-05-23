@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    if @user.microposts.any?
+      @microposts_user = @user.microposts.order(created_at: :desc)
+    else
+      @microposts_user = 0
+    end
   end
 
   def new
