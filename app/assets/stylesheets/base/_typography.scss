@@ -60,3 +60,22 @@ body {
     margin-bottom: 3rem;
   }
 }
+
+.title-post {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $color-primary;
+}
+
+.short-link {
+  &:link,
+  &:visited {
+    color: $color-primary !important;
+  }
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}

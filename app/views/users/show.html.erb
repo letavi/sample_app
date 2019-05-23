@@ -1,24 +1,46 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "User") %>
+<section class="section-detail-user">
+  <div class="u-center-text u-margin-bottom-big">
+    <h2 class="heading-secondary">
+      Information
+    </h2>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <div class="row">
+    <p class="paragraph u-center-text">
+      Name: 
+      <%= @user.name %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+    <p class="paragraph u-center-text">
+      Email: 
+      <%= @user.email %>
+    </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <p class="paragraph u-center-text">
+      <%= link_to 'Edit User', edit_user_path(@user), class: "btn btn-primary" %>
+      <%= link_to 'Remove User', user_path(@user), method: :delete, data: { confirm: "Are you sure remove this user?" }, class: "btn btn-warning" %>
+    </p>
+    <hr>
+    <h3 class="u-center-text"> All Posts of User</h3>
+    <% unless @microposts_user == 0 %>
+      <% @microposts_user.each do |post| %>
+        <h4 class="u-center-text title-post"><%= post.title %></h4>
+        <p class="paragraph">
+          <%= post.content %>
+        </p>
 
-<% unless @microposts_user == 0 %>
-  <% @microposts_user.each do |post| %>
-    <%= post.title %>
-    <%= post.content %>
-  <% end %>
-<% else %>
-  <p>You don't have any post, so do you want to create post?</p>
-  <%= link_to 'Click here', new_micropost_path %>
-<% end %>
+        <p class="paragraph u-center-text">
+        <%= link_to 'Show Post', micropost_path(post), class: "btn btn-success" %>
+          <%= link_to 'Edit Post', edit_micropost_path(post), class: "btn btn-primary" %>
+          <%= link_to 'Remove Post', micropost_path(post), method: :delete, data: { confirm: "Are you sure remove this post?" }, class: "btn btn-warning" %>
+        </p>
+      <% end %>
+    <% else %>
+      <p class="paragraph u-center-text">
+        You don't have any post, so do you want to create post?
+        <%= link_to 'Click here', new_micropost_path, class: "short-link" %>
+      </p>
+    <% end %>
+  </div>
+</section>

@@ -6,5 +6,5 @@ class Micropost < ApplicationRecord
   validates :title, presence: true, length: { in: 5..100 }
   
   # Validate for content
-  validates :contant, presence: true, length: { in: 5..1000 } 
+  validates :content, presence: true, length: { in: 5..1000 } 
 end
